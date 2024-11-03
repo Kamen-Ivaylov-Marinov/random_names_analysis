@@ -1,15 +1,14 @@
 # random_names_analysis
 # Task 1:
-1 име за всяка първа буква и
-1 име за всяка първа и втора буква
+One name for each first letter and one name for each combination of the first and second letters.
 
 # Task 2
-0. Анализ на имената. (свободна задача, изкарай ми някакви статистики за имената които сметнеш че са интересни. Например повечето започват с буквата А, са имена на религиозни личности, са странни)
+0. Analyze the names. (Open task – generate some interesting statistics about the names, like: most names start with the letter A, many names are religious, or some are unusual.)
 
-1. На базата на имената, да кажеш колко е вероятно името на детето да започва с дадена буква.
+1. Based on the names, determine the likelihood that a child's name will start with a specific letter.
 
-2. Същото като 1 но е да съдържа дадена поредица от букви (слети, например ASP, в името "Aspen")
+2. Similar to 1, but instead, calculate the likelihood that a name contains a given sequence of letters in that exact order (for example, "ASP" in the name "Aspen").
 
-3. Същото като 2, но буквите могат да имат друго между тях. т.е. колко е вероятно името да има буквите  x,y,z като името е "aXprYZ"
+3. Similar to 2, but the letters can have other characters in between them. For example, how likely is it for a name to contain the letters x, y, z, even if they aren’t adjacent, like in the name "aXprYZ"?
 
-4. Същото като 3, но буквите могат да бъдат в различна подредба. Например буквите A, B, C. Примерни имена са "ABaCatus", "CABbage", "BrACel"
+4. Similar to 3, but the letters can appear in any order. For example, given the letters A, B, C, possible names could be "ABaCatus," "CABbage," or "BrACel."
