@@ -487,7 +487,7 @@ name_list = ['Aaren', 'Aarika', 'Abagael', 'Abagail', 'Abbe', 'Abbey', 'Abbi', '
 
 unique_names = []
 names_by_two_letters = []
-
+# Print one name for each letter from the alphabet
 for name in name_list:  # takes a name
     first_letter = name[0]  # 1-st letter of the name
 
@@ -501,7 +501,7 @@ for name in name_list:  # takes a name
     if not found:   # if they are not, add to new list
         unique_names.append(name)
 print(f"Print one name for each letter from the alphabet: {unique_names}")
-
+# Print one name for each first and second letter from the alphabet
 for name in name_list:  # takes a name
     first_two_letters = name[:2] # 1-st 2 letters of the name
     found = False
@@ -512,3 +512,22 @@ for name in name_list:  # takes a name
     if not found:   # if they are not, add to new list
         names_by_two_letters.append(name)
 print(f"Print one name for each first and second letter from the alphabet: {names_by_two_letters}")
+
+# Based on the list with names, what is the probability of the name to start with a specific letter
+print(f"Chose a capital letter")
+user_input = input()
+count_names = 0
+for name in name_list:
+    if name[0] == user_input:
+        count_names += 1
+percentage = (count_names / len(name_list)) * 100
+print(f"Based on the list with names, the probability of the name to start with: '{user_input}' is {percentage:.2f}%")
+
+# Based on the list with names, what is the probability specific series of letters to be part of the name
+new_input = input()
+new_count = 0
+for name in name_list:
+    if new_input in name:
+        new_count += 1
+new_percentage = (new_count / len(name_list)) * 100
+print(f"Based on the list with names, the probability this series of letters: {new_input} to be part of the name is {new_percentage:.2f}%")
