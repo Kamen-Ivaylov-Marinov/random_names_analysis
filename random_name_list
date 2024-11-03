@@ -486,19 +486,29 @@ name_list = ['Aaren', 'Aarika', 'Abagael', 'Abagail', 'Abbe', 'Abbey', 'Abbi', '
 
 
 unique_names = []
+names_by_two_letters = []
 
-for name in name_list:
-    first_letter = name[0]
+for name in name_list:  # takes a name
+    first_letter = name[0]  # 1-st letter of the name
 
     found = False
 
-    for unique_name in unique_names:  #
-        if unique_name[0] == first_letter:
-            found = True
+    for unique_name in unique_names:    # check the name form our new list
+        if unique_name[0] == first_letter: # checks if the first letter from both names are the same
+            found = True    # if they are,skip
             break
 
-    if not found:
+    if not found:   # if they are not, add to new list
         unique_names.append(name)
-
-unique_names.sort()
 print(f"Print one name for each letter from the alphabet: {unique_names}")
+
+for name in name_list:  # takes a name
+    first_two_letters = name[:2] # 1-st 2 letters of the name
+    found = False
+    for unique_name in names_by_two_letters:  # check the name form our new list
+        if unique_name[:2] == first_two_letters:    # # checks if the first two letters from both names are the same
+            found = True    # # if they are,skip
+            break
+    if not found:   # if they are not, add to new list
+        names_by_two_letters.append(name)
+print(f"Print one name for each first and second letter from the alphabet: {names_by_two_letters}")
