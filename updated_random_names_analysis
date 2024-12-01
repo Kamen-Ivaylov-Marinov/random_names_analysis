@@ -483,40 +483,31 @@ name_list = ['Aaren', 'Aarika', 'Abagael', 'Abagail', 'Abbe', 'Abbey', 'Abbi', '
              'Zaria', 'Zarla', 'Zea', 'Zelda', 'Zelma', 'Zena', 'Zenia', 'Zia', 'Zilvia', 'Zita', 'Zitella', 'Zoe',
              'Zola', 'Zonda', 'Zondra', 'Zonnya', 'Zora', 'Zorah', 'Zorana', 'Zorina', 'Zorine', 'Zsa Zsa', 'Zsazsa',
              'Zulema', 'Zuzana']
+names_dict = {}
 
-unique_names = []
-names_by_two_letters = []
-# Print one name for each letter from the alphabet
 
-for name in name_list:
-    first_letter = name[0]
-    found_first = any(unique_name[0] == first_letter for unique_name in unique_names)
+def dictionary_names():
+    for name in name_list:
+        key = name[0]
+        if key not in names_dict.keys():
+            names_dict[key] = []
+        names_dict[key] += [name]
 
-    if not found_first:
-        unique_names.append(name)
 
-    first_two_letters = name[:2]
-    found_two_letters = any(unique_name[:2] == first_two_letters for unique_name in names_by_two_letters)
+def given_sequence_of_letters():
+    letters = input()
+    result = []
+    for key in names_dict.keys():
+        value = names_dict[key]
+        for sequence in value:
+            if letters.lower() in sequence.lower():
+                result.append(sequence)
+    calculate_result = (len(result) / len(name_list)) * 100
+    return print(f"The likelihood that a name contains '{letters}' in that exact order is {calculate_result:.2f}%")
 
-    if not found_two_letters:
-        names_by_two_letters.append(name)
-print(f"Print one name for each letter from the alphabet: {unique_names}")
-print(f"Print one name for each first and second letter from the alphabet: {names_by_two_letters}")
 
-print(f"Chose a capital letter")
-user_input = input()
-count_names = 0
-for name in name_list:
-    if name[0] == user_input:
-        count_names += 1
-percentage = (count_names / len(name_list)) * 100
-print(f"Based on the list with names, the probability of the name to start with: '{user_input}' is {percentage:.2f}%")
+dictionary_names()
+given_sequence_of_letters()
 
-# Based on the list with names, what is the probability specific series of letters to be part of the name
-new_input = input()
-new_count = 0
-for name in name_list:
-    if new_input in name:
-        new_count += 1
-new_percentage = (new_count / len(name_list)) * 100
-print(f"Based on the list with names, the probability this series of letters: {new_input} to be part of the name is {new_percentage:.2f}%")
+
+
